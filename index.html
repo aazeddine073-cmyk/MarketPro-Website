@@ -1,29 +1,154 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="MarketPro لإدارة البقالة والمخزون والمبيعات">
-<meta name="theme-color" content="#0b1220">
-<title>MarketPro | إدارة متجرك</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MarketPro برنامج عربي لإدارة المتاجر والبقالات: المنتجات والمخزون والباركود والمبيعات والفواتير والديون والتقارير.">
+<meta name="theme-color" content="#09111f">
+<title>MarketPro | إدارة متجرك بذكاء</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#f4f7fb;font:16px/1.9 Tahoma,Arial,sans-serif}.wrap{width:min(94%,960px);margin:auto}.top{padding:17px 0;border-bottom:1px solid #26364d;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:26px;font-weight:bold}.brand span{color:#24c58a}.social{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;background:#1877f2;padding:8px 13px;border-radius:10px;font-size:14px;font-weight:bold}.social svg{width:19px;height:19px;fill:currentColor}.hero{text-align:center;padding:65px 0 45px}.badge{color:#78e4b8;background:#123528;border:1px solid #27644f;border-radius:30px;padding:5px 15px}.hero h1{font-size:clamp(32px,6vw,54px);line-height:1.3;margin:22px 0 10px}.hero p{max-width:680px;margin:0 auto 25px;color:#aebbd0;font-size:18px}.btn{display:inline-block;background:#24c58a;color:#062217;text-decoration:none;font-weight:bold;padding:13px 27px;border-radius:12px}.hint{font-size:13px;color:#aebbd0;margin-top:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px;margin:25px 0 50px}.card{background:#121e30;border:1px solid #26364d;border-radius:15px;padding:18px}.card h3{margin:0 0 6px}.card p{margin:0;color:#aebbd0}.notice{background:#302719;border:1px solid #70562b;border-radius:14px;padding:20px;margin-bottom:50px}.notice h2{color:#ffd58a;margin:0 0 8px}.notice p{margin:5px 0;color:#f0dfbd}footer{text-align:center;color:#aebbd0;border-top:1px solid #26364d;padding:22px;font-size:13px}@media(max-width:480px){.top{align-items:flex-start}.brand{font-size:23px}.social{font-size:12px;padding:7px 9px}}
+:root{--bg:#09111f;--surface:#101d30;--surface2:#17263b;--text:#f5f8fc;--muted:#a9b7ca;--green:#35d39b;--green2:#20b982;--line:#263950;--blue:#1877f2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Cairo",Tahoma,Arial,sans-serif;line-height:1.85}
+a{color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(9,17,31,.91);backdrop-filter:blur(14px);border-bottom:1px solid rgba(169,183,202,.13)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:27px;font-weight:900;letter-spacing:-.7px}
+.brand-mark{width:39px;height:39px;border-radius:12px;background:var(--green);color:#062318;display:grid;place-items:center;font-weight:900;font-size:23px;box-shadow:0 7px 25px #35d39b30}
+.brand span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:27px}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:700;transition:.2s}
+.nav-links a:hover{color:var(--green)}
+.social{display:inline-flex;align-items:center;gap:9px;background:#1877f2;color:white;text-decoration:none;border-radius:12px;padding:9px 14px;font-size:13px;font-weight:800;transition:.2s}
+.social:hover{transform:translateY(-2px);background:#0f68dc}
+.social svg{width:19px;height:19px;fill:currentColor}
+.hero{position:relative;overflow:hidden;padding:86px 0 88px}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:#20b98212;filter:blur(50px);top:-250px;right:-180px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-size:14px;font-weight:800;background:#35d39b12;border:1px solid #35d39b35;padding:5px 15px;border-radius:30px}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+h1{font-size:clamp(38px,5.2vw,63px);line-height:1.35;letter-spacing:-1.8px;margin:22px 0 16px;font-weight:900}
+h1 span{color:var(--green)}
+.hero-copy{max-width:570px;color:var(--muted);font-size:17px;margin:0 0 27px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;border-radius:13px;padding:13px 23px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--green);color:#052319;box-shadow:0 10px 28px #35d39b25}
+.btn-secondary{background:var(--surface2);border:1px solid var(--line);color:var(--text)}
+.btn svg{width:19px;height:19px}
+.hero-note{font-size:12px;color:var(--muted);margin-top:15px}
+.preview{background:linear-gradient(145deg,#17283f,#0e192a);border:1px solid #2b405a;border-radius:23px;padding:17px;box-shadow:0 30px 90px #0006;transform:perspective(1000px) rotateY(3deg)}
+.preview-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:2px 3px 14px;margin-bottom:17px}
+.window-dots{display:flex;gap:6px;direction:ltr}.window-dots i{width:9px;height:9px;border-radius:50%;background:#ed6a70}.window-dots i:nth-child(2){background:#f1bd58}.window-dots i:nth-child(3){background:var(--green)}
+.preview-title{font-size:14px;font-weight:800}
+.preview-tag{font-size:10px;color:var(--green);background:#35d39b16;padding:3px 9px;border-radius:20px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:#0b1627;border:1px solid #243750;border-radius:13px;padding:13px 11px}
+.stat small{display:block;color:var(--muted);font-size:10px}.stat strong{display:block;font-size:19px;margin-top:3px}.stat em{font-style:normal;color:var(--green);font-size:10px}
+.chart-box{margin-top:13px;padding:15px;background:#0b1627;border:1px solid #243750;border-radius:14px}
+.chart-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800}.chart-head span{font-size:10px;color:var(--muted);font-weight:500}
+.chart{height:115px;display:flex;align-items:end;gap:9px;padding:14px 4px 0;direction:ltr}
+.chart i{flex:1;display:block;border-radius:6px 6px 2px 2px;background:linear-gradient(0deg,#20b982,#68e4b7);opacity:.88;min-width:7px}
+.preview-bottom{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.preview-pill{flex:1;background:#17263b;border-radius:10px;padding:9px 10px;font-size:10px;color:var(--muted)}
+.preview-pill b{display:block;color:var(--text);font-size:12px}
+.section{padding:82px 0}
+.section-alt{background:#0c1728;border-top:1px solid #1c2b40;border-bottom:1px solid #1c2b40}
+.section-head{text-align:center;max-width:650px;margin:0 auto 37px}
+.section-kicker{color:var(--green);font-size:13px;font-weight:900}
+.section-head h2{font-size:clamp(27px,4vw,39px);line-height:1.4;margin:8px 0;font-weight:900}
+.section-head p{color:var(--muted);margin:0;font-size:15px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:23px;transition:.2s}
+.feature:hover{transform:translateY(-5px);border-color:#35d39b80}
+.feature-icon{width:47px;height:47px;display:grid;place-items:center;background:#35d39b16;color:var(--green);border-radius:13px;font-size:22px;font-weight:900;margin-bottom:15px}
+.feature h3{font-size:17px;margin:0 0 6px}.feature p{font-size:13px;color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:850px;margin:auto}
+.step{text-align:center;padding:20px}
+.step-num{width:58px;height:58px;margin:0 auto 12px;border-radius:18px;display:grid;place-items:center;background:#35d39b18;color:var(--green);font-size:20px;font-weight:900;border:1px solid #35d39b45}
+.step h3{font-size:16px;margin:0 0 4px}.step p{font-size:12px;color:var(--muted);margin:0}
+.trial{background:linear-gradient(120deg,#142b36,#12243a);border:1px solid #2b514c;border-radius:20px;padding:28px 32px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.trial h2{margin:0 0 5px;font-size:23px;color:#9af0cb}.trial p{margin:0;color:#c2d0df;font-size:13px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-copy{max-width:680px}.preview{max-width:620px;width:100%;margin:auto;transform:none}.features{grid-template-columns:repeat(2,1fr)}.nav-links{gap:14px}}
+@media(max-width:600px){.nav{min-height:70px;flex-wrap:wrap;padding:12px 0}.brand{font-size:23px}.brand-mark{width:35px;height:35px}.nav-links{order:3;width:100%;justify-content:center;border-top:1px solid #263950;padding-top:8px}.nav-links a{font-size:12px}.social{font-size:11px;padding:7px 9px}.hero{padding:55px 0 62px}.hero-grid{gap:32px}h1{font-size:39px}.hero-copy{font-size:15px}.actions{display:grid;grid-template-columns:1fr}.btn{width:100%}.preview{padding:12px;border-radius:17px}.stat{padding:10px 8px}.stat strong{font-size:16px}.chart{height:90px;gap:6px}.section{padding:62px 0}.features{grid-template-columns:1fr}.feature{padding:19px}.steps{grid-template-columns:1fr;gap:3px}.step{padding:13px}.trial{padding:23px 19px;display:block;text-align:center}.trial .btn{margin-top:17px}.footer-inner{justify-content:center;text-align:center}}
 </style>
 </head>
 <body>
-<header class="top wrap">
-<div class="brand">Market<span>Pro</span></div>
-<a class="social" href="https://www.facebook.com/profile.php?id=61596266398593" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا على فيسبوك">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21h3.4z"/></svg>
-<span>صفحتنا على Facebook</span></a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#" aria-label="MarketPro الصفحة الرئيسية"><span class="brand-mark">M</span>Market<span>Pro</span></a>
+    <nav class="nav-links" aria-label="القائمة الرئيسية">
+      <a href="#features">المميزات</a><a href="#how">طريقة العمل</a><a href="#download">تحميل البرنامج</a>
+    </nav>
+    <a class="social" href="https://www.facebook.com/profile.php?id=61596266398593" target="_blank" rel="noopener noreferrer" aria-label="صفحتنا على فيسبوك">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21h3.4z"/></svg>
+      <span>صفحتنا على Facebook</span>
+    </a>
+  </div>
 </header>
-<main class="wrap">
-<section class="hero"><span class="badge">برنامج تسيير المتاجر والبقالات</span><h1>كل متجرك في مكان واحد</h1><p>إدارة المنتجات والمخزون والمبيعات والباركود والفواتير والديون والموردين والمصاريف والتقارير، بواجهة عربية سهلة.</p><a class="btn" href="https://github.com/aazeddine073-cmyk/MarketPro/releases/download/marketpro-latest/MarketPro-Windows-32bit-Universal.zip">تحميل MarketPro لنظام Windows</a><div class="hint">نسخة Windows ‏32-bit، لأنظمة Windows المتوافقة 32 و64 بت.</div></section>
-<section class="grid">
-<div class="card"><h3>📦 المخزون والباركود</h3><p>إدارة المنتجات والكميات والأسعار وقراءة الباركود.</p></div>
-<div class="card"><h3>🧾 المبيعات والفواتير</h3><p>سلة بيع وخصومات وفواتير قابلة للطباعة ومتابعة الباقي.</p></div>
-<div class="card"><h3>💰 الصندوق والديون</h3><p>متابعة المقبوضات والمصاريف وديون الزبائن والإغلاق اليومي.</p></div>
-<div class="card"><h3>📊 التقارير</h3><p>تقارير المبيعات والأرباح والمصاريف وتقييم المخزون.</p></div>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">برنامج تسيير المتاجر والبقالات</span>
+      <h1>كل تفاصيل متجرك،<br><span>في مكان واحد.</span></h1>
+      <p class="hero-copy">MarketPro يساعدك على تنظيم المنتجات والمخزون والمبيعات والباركود والفواتير والديون والمصاريف والتقارير، بواجهة عربية سهلة.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/aazeddine073-cmyk/MarketPro/releases/download/marketpro-latest/MarketPro-Windows-32bit-Universal.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 19h16"/></svg>
+          تحميل MarketPro للويندوز
+        </a>
+        <a class="btn btn-secondary" href="#features">اكتشف المميزات</a>
+      </div>
+      <div class="hero-note">نسخة Windows ‏32-bit، لأنظمة Windows المتوافقة 32 و64 بت.</div>
+    </div>
+    <div class="preview" aria-label="تصميم توضيحي للوحة تحكم MarketPro">
+      <div class="preview-top"><div class="window-dots"><i></i><i></i><i></i></div><div class="preview-title">نظرة على لوحة التحكم</div><span class="preview-tag">معاينة توضيحية</span></div>
+      <div class="stats">
+        <div class="stat"><small>إدارة المنتجات</small><strong>بسهولة</strong><em>تنظيم سريع</em></div>
+        <div class="stat"><small>المبيعات</small><strong>مباشرة</strong><em>متابعة يومية</em></div>
+        <div class="stat"><small>المخزون</small><strong>منظّم</strong><em>تحكم أفضل</em></div>
+      </div>
+      <div class="chart-box"><div class="chart-head">متابعة النشاط <span>رسم توضيحي</span></div><div class="chart"><i style="height:35%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:68%"></i><i style="height:58%"></i><i style="height:78%"></i><i style="height:63%"></i><i style="height:91%"></i><i style="height:73%"></i><i style="height:100%"></i><i style="height:82%"></i><i style="height:94%"></i></div></div>
+      <div class="preview-bottom"><div class="preview-pill">المنتجات<b>إدارة وتصنيف</b></div><div class="preview-pill">الفواتير<b>إنشاء وطباعة</b></div><div class="preview-pill">التقارير<b>متابعة واضحة</b></div></div>
+    </div>
+  </div>
 </section>
-<section class="notice"><h2>التجربة والتفعيل</h2><p>يمكن تجربة البرنامج لمدة 60 دقيقة على الجهاز عند أول تشغيل، مع الاتصال بالإنترنت لبدء التجربة.</p><p>بعد انتهاء مدة التجربة، يتوقف الوصول إلى البرنامج ويطلب كود تفعيل صالحاً لمتابعة الاستخدام.</p><p>كود التفعيل مرتبط بجهاز واحد، ومدة التجربة تُدار من خادم التفعيل.</p></section>
-</main><footer>© 2026 MarketPro — جميع الحقوق محفوظة.</footer>
-</body></html>
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-head"><span class="section-kicker">كل ما تحتاجه في برنامج واحد</span><h2>أدوات قوية، بطريقة بسيطة</h2><p>نظّم أعمال متجرك اليومية وتابع التفاصيل من مكان واحد.</p></div>
+    <div class="features">
+      <article class="feature"><div class="feature-icon">▦</div><h3>إدارة المنتجات</h3><p>أضف المنتجات ونظّمها حسب الأسعار والتصنيفات والكميات.</p></article>
+      <article class="feature"><div class="feature-icon">▣</div><h3>قارئ الباركود</h3><p>سرّع عمليات البيع باستعمال نظام الباركود.</p></article>
+      <article class="feature"><div class="feature-icon">↗</div><h3>المبيعات والفواتير</h3><p>سلة بيع وخصومات وفواتير قابلة للطباعة ومتابعة الباقي.</p></article>
+      <article class="feature"><div class="feature-icon">◷</div><h3>المخزون والتنبيهات</h3><p>راقب الكميات وتابع حالة مخزون متجرك.</p></article>
+      <article class="feature"><div class="feature-icon">دج</div><h3>الصندوق والديون</h3><p>تابع المقبوضات والمصاريف وديون الزبائن والإغلاق اليومي.</p></article>
+      <article class="feature"><div class="feature-icon">▤</div><h3>التقارير</h3><p>تقارير المبيعات والأرباح والمصاريف وتقييم المخزون.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head"><span class="section-kicker">بداية سهلة</span><h2>ابدأ في ثلاث خطوات</h2><p>خطوات واضحة لتبدأ تنظيم متجرك باستخدام MarketPro.</p></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><h3>حمّل البرنامج</h3><p>نزّل نسخة Windows من زر التحميل.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>أضف منتجاتك</h3><p>ابدأ بإدخال المنتجات والكميات والأسعار.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>ابدأ البيع</h3><p>استعمل أدوات البيع والفواتير والتقارير.</p></div>
+    </div>
+    <div class="trial" id="download">
+      <div><h2>جرّب MarketPro قبل التفعيل</h2><p>يمكن تجربة البرنامج لمدة 60 دقيقة على الجهاز عند أول تشغيل، مع الاتصال بالإنترنت لبدء التجربة. بعد انتهاء التجربة، يلزم كود تفعيل صالح لمتابعة الاستخدام، ويرتبط الكود بجهاز واحد.</p></div>
+      <a class="btn btn-primary" href="https://github.com/aazeddine073-cmyk/MarketPro/releases/download/marketpro-latest/MarketPro-Windows-32bit-Universal.zip">تحميل البرنامج الآن ↓</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-inner"><span>© 2026 MarketPro — جميع الحقوق محفوظة.</span><a href="https://www.facebook.com/profile.php?id=61596266398593" target="_blank" rel="noopener noreferrer">تواصل معنا على Facebook</a></div></footer>
+</body>
+</html>
